@@ -4,6 +4,8 @@ WORKDIR /app
 
 ADD . /app
 
-RUN pip install -r ./requirements.txt
+RUN pip freeze > requirements.txt
+
+RUN pip install -r requirements.txt
 
 CMD ["uwsgi", "config.ini"]
