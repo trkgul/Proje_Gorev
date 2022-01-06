@@ -1,0 +1,2 @@
+#!/bin/bash
+aws ec2 describe-instances --filter Name=instance-state-name,Values=running --query 'Reservations[].Instances[].{Instance:InstanceId,PublicIpAddress:PublicIpAddress,Name:Tags[?Key==`Name`]|[0].Value}' --output table
