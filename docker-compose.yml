@@ -10,7 +10,7 @@ services:
         networks:
             - my-network
         ports:
-            - 80:80
+            - 5000:80
     flask:
         build:
             context: ./
@@ -18,14 +18,14 @@ services:
         image: flask:0.0.1
         container_name: flask
         volumes:
-            - ./:/code/
+            - ./:/flaskapp/
         environment:
             - FLASK_APP=/flaskapp/app.py
         command: flask run --host=0.0.0.0
         networks:
             my-network:
                 aliases:
-                    - flask-app
+                    - myflaskapp
         ports:
             - 8080:5000
 
