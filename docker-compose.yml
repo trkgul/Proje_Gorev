@@ -20,7 +20,7 @@ services:
         volumes:
             - ./:/code/
         environment:
-            - FLASK_APP=/code/main.py
+            - FLASK_APP=/flaskapp/app.py
         command: flask run --host=0.0.0.0
         networks:
             my-network:
