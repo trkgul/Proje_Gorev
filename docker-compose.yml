@@ -18,9 +18,9 @@ services:
         image: flask:0.0.1
         container_name: flask
         volumes:
-            - ./:/flaskapp/
+            - ./:/Proje_Gorev/flaskapp/
         environment:
-            - FLASK_APP=/flaskapp/app.py
+            - FLASK_APP=Proje_Gorev/flaskapp/app.py
         command: flask run --host=0.0.0.0
         networks:
             my-network:
